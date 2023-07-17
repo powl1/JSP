@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let arr = Math.random()*((100 - 0) + 1);
+        console.log(arr(6));
+
+        /* */
+        let lotto = []; // new Array(6);
+        while (lotto.length < 6) {
+            let num = parseInt(Math.random()*45) + 1; // parseInt 정수 변경
+            // let num = floor(Math.random()*45) + 1; // floor 소수점 버리기
+            if (lotto.indexOf(num) < 0) { // indexOf 중복제거 -1;
+                lotto.push(num);
+            }
+        }
+
+        document.write("이번주 당첨 숫자는 " + lotto.sort());
+
+        console.log("---------------------------------------");
+
+        /* 국영수 입력 받아서 getAvg(), getGrade() 활용하여 총점과 평균, 학점이 나오도록 하시오. */
+        let kor1 = Number(prompt("국어 점수를 입력하세요 : "));
+        let eng1 = Number(prompt("영어 점수를 입력하세요 : "));
+        let mat1 = Number(prompt("수학 점수를 입력하세요 : "));
+
+
+        // let getSum = kor + eng + mat;
+        // let getAvg = getSum % getSum.length();
+        // if(getAvg >= 90) {
+        //     getGrade = ('수');
+        // } else if(getAvg >= 80) {
+        //     getGrade = ('우');
+        // } else if(getAvg >= 70) {
+        //     getGrade = ('미');
+        // } else if(getAvg >= 60) {
+        //     getGrade = ('양');
+        // } else {
+        //     getGrade = ('가');
+        // }
+
+        // console.log("총점은 : " + getSum);
+        // console.log("평균은 : " + getAvg);
+        // console.log("학점은 : " + getGrade);
+
+        console.log("선생님 방식 -----------------------------------");
+        var kor, eng, mat;
+
+        function getAvg(kor, eng, mat) {
+            return (Number(kor) + Number(eng) + Number(mat)) / 3.0;
+        }
+
+        function getGrade(avg) {
+            var grade = "가";
+            if(avg >= 90) {
+                grade= ('수');
+            } else if(avg >= 80) {
+                grade = ('우');
+            } else if(avg >= 70) {
+                grade = ('미');
+            } else if(avg >= 60) {
+                grade = ('양');
+            } else {
+                grade = ('가');
+            }
+            return grade;
+        }
+
+        kor = prompt("국어");
+        eng = prompt("영어");
+        mat = prompt("수학");
+
+        document.write("평균" + getAvg(kor, eng, mat) + "<br>");
+        document.write("학점" + getGrade(getAvg(kor, eng, mat)) + "<br>");
+
+        var arrSub = ["국어","영어","수학"];
+
+        function getAvg(arrSubs){
+            var sum = 0;
+            
+            for (var i in arrSubs) {
+                 sum = sum + Number(arrSubs[i]);
+            }
+            return sum / arrSubs.length;
+        }
+
+        function getGrade(avg){
+            var grade = "가";
+            
+            if(avg >= 90){
+                grade = "수";
+            }else if(avg >= 80){
+                grade = "우";
+            }else{
+                grade = "가";
+            }          
+            
+            return grade;
+        }
+
+        for (var i in object) {
+            arrSub[i] = prompt(arrSub[i])
+        }
+
+
+        document.write("평균" + getAvg(arrSub) + "<br>");
+        document.write("학점" + getGrade(getAvg(arrSub)) + "<br>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

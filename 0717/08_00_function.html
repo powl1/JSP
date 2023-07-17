@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 명시(선언)적 함수 생성
+        // function add() {
+        //     return "합니다";
+        // }
+
+        // document.write(add());
+
+        // function add(num1, num2) {
+        //     return num1 + num2;
+        // }
+
+        // document.write(add(1,2));
+
+        // 익명함수
+        let sub = function(num1, num2) {
+            // 함수 이름이 없지만 변수로 할당이 가능
+            // 해당된 함수를 가지고 사용이 가능하다.
+            return num1 - num2;
+        }
+
+        document.write(sub(1,2) + "<br>");
+
+        console.log("---------------------------------------");
+
+        /* 함수 실행 순서 */
+			
+        fun1(); //정상 실행
+        fun2(); //오류 발생
+        
+        // 명시(선언)적 함수 생성
+        function fun1(){
+            console.log("fun1 run!");
+        }
+        
+        // 익명 함수 생성
+        var fun2 = function(){
+            console.log("fun2 run!");
+        }
+        
+        fun2();		//정상 실행
+
+        // 읽을 때 처음에 스캔해서 들어가는데 명시적 선언 함수가 중간에 있으면 메모리에 먼저 올린다. : 호이스팅
+        // 익명함수는 위에서부터 아래로 순차적으로 실행된다.
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

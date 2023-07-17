@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 함수(핵심) = this 와 argument
+        // arguments = 자바 스크립트에서 함수가 만들어 질 때 생성자처럼 두개를 넣어줌
+        // 그게 바로 arguments 와 this.
+        function funArgs() { // 선언시 파라미터 개수와 다르게
+            
+            for (let i = 0; i < arguments.length; i++) {
+                document.write(arguments [i] + "<br>");
+            }
+
+
+            return arguments;
+        }
+
+        let fun = funArgs(1,2,3,4,5,6,7); // [ 자바와 다르게 ] 함수 사용시 파라미터를 넣어 사용이 가능하다.
+        
+        for (let num in fun) {
+            document.write(fun[num] + "<br");
+            
+        }
+        
+        document.write(fun + "<br");
+        document.write("fun : " + fun.length + "<br>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+function calculateGrade(korean, english, math) {
+  var total = korean + english + math;
+  var average = total / 3;
+
+  document.write("총점: " + total + "<br>");
+  document.write("평균: " + average.toFixed(2) + "<br>");
+
+  if (average >= 90) {
+    document.write("학점: 수");
+  } else if (average >= 80) {
+    document.write("학점: 우");
+  } else if (average >= 70) {
+    document.write("학점: 미");
+  } else if (average >= 60) {
+    document.write("학점: 양");
+  } else {
+    document.write("학점: 가");
+  }
+}
+
+var koreanScore = parseInt(prompt("국어 점수를 입력하세요:"));
+var englishScore = parseInt(prompt("영어 점수를 입력하세요:"));
+var mathScore = parseInt(prompt("수학 점수를 입력하세요:"));
+
+calculateGrade(koreanScore, englishScore, mathScore);
+
+
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>

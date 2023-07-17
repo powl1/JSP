@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 별
+        for(var i =1; i<=5 ; i++){  
+            for(var j= 1; j<=i; j++){
+               document.write( "*") 
+            }
+            document.write( "<br>") 
+         }
+        
+
+         document.write("<br>")
+
+
+         for(var i=1; i<= 5; i++){
+            for(var j=i; j<=5; j++){
+                document.write("*");
+
+            }
+            document.write("<br>");
+         }
+        
+         document.write("<br>")
+ 
+        for(var i=1; i<=5; i++){
+            for(var j=i; j<5; j++){
+                document.write("&nbsp;") // 공백 
+            }
+            for(var k=1; k<=i; k++){
+                document.write("*")
+            }
+            document.write("<br>");
+        }
+         
+        document.write("<br>")
+
+        for(var i=1; i<=5; i++){
+            for(var j=1; j<i; j++){
+                document.write("&nbsp;") // 공백 = 유니코드 \u00A0
+            }
+            for(var k=i; k<=5; k++){
+                document.write("*")
+            }
+            document.write("<br>");
+        }
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
