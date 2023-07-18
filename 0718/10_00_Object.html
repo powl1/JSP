@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 객체 생성 */
+        var objName = {};
+        document.write(typeof objName);
+        
+        var objCar = {
+            width : "3m",
+            height : "2m",
+            cc : "2000cc",
+            energy : 100,
+            speed : function(power){
+                return this.energy * power;
+                // 자기 자신 것을 접근할 때는 this 필수, 자바에서는 생략 가능
+            }
+        };
+
+        var print = "";
+        for(var key in objCar) {
+            //if(typeof objCar[key] == "function") continue;
+            print += key + " : " + objCar[key] + "\n"
+        }
+
+        document.write(objCar.width + "<br>");
+        document.write(objCar.height + "<br>");
+        document.write(objCar.cc + "<br>");
+        document.write(objCar.energy + "<br>");
+        document.write(objCar.speed(100) + "<br>"); // 파라미터(함수) : speed(power)
+
+        document.write("<br>----------------------------------------------------<br><br>");
+        document.write("- 10_03 객체 접근 내용<br>");
+
+        document.write(objCar["width"] + "<br>");
+        document.write(objCar["height"] + "<br>");
+
+        document.write("<br>----------------------------------------------------<br><br>");
+        document.write("- 10_04 for in을 이용한 객체 접근<br>"); //
+
+        document.write("<br>----------------------------------------------------<br><br>");
+        document.write("- 10_05 객체에 속성 추가 및 삭제<br>"); // 속성 추가/삭제 가 자유롭다.
+        var objName = {            
+            name : "Lee sun sin",
+            nation : "Korea",
+            gender  : "men",
+            character : "good"            
+        };
+         
+        var print = "";
+        for(var key in objName) {
+            print += key + " : " + objName[key] + "\n"
+        }
+        console.log(print);
+         
+        //속성 추가
+        objName.talent = "fencing";
+
+        //속성 삭제
+        delete(objName.talent);
+
+        print = "";
+        for(var key in objName) {
+            print += key + " : " + objName[key] + "\n"
+        }
+        console.log(print);
+
+        document.write("<br>----------------------------------------------------<br><br>");
+        document.write("- 10_06 in, with 키워드<br>"); // 속성 추가/삭제 가 자유롭다.
+
+        // in 키워드
+			console.log("nation" in objName);		// true
+			console.log("age" in objName);			// false
+			
+        // with 키워드
+        with(objName) {
+            console.log("name : " + name);
+            console.log("nation : " + nation);
+            console.log("gender : " + gender);
+            console.log("character : " + character);
+        }
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

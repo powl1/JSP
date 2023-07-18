@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.write("- 11_06 객체 만드는 방법<br>");
+        // 기본적인 객체 생성
+        // 파라미터[a] : 리터럴[1] = a : 1;
+
+        // 리터럴 표기법 : 리터럴표기법이란, 변수를 선언함과 동시에 그 값을 지정해주는 표기법
+        // var no = 3;
+        // var obj = { name: 'JY', age: 20 }; 객체리터럴
+        
+        // 1. 오브젝트 생성
+        var person = new Object(); // person = {};
+        person.name = "홍길동";
+        person.age = 35;
+
+        // 2. 객체 리터럴 활용 방법
+        var objPerson = {
+            name : "홍길동",
+            age : 35
+        }
+
+        // 3. 내가 생성자 함수를 만드는 방법 [붕어빵틀 만들기 (?)]
+        // 함수에서도 기본적으로 this 를 쓸 수 있음 = 자바 스크립트에서는 함수가 객체이기 때문
+        // 함수가 만들어 질 때 => 객체로 만들기 위해서 2가지를 심어줌
+        // 그 두자기는 this 와 arguments
+        function Airplane(name, color, speed) {
+        // 생성자 함수는 function 을 이용하고 함수명은 첫글자 대문자로 작송해야한다.
+            // arguments;
+            // this; = Airplane = {}
+
+            this.name = name;
+            this.color = color;
+            this.speed = speed;
+            this.fly = function() {
+                return this.speed + " fly!!";
+            };
+        // 주의 사항 : 함수라 함수(=)를 작성해야하는데 객체(:)로 생성시킨다
+        };
+
+        var plan1 = new Airplane("보라메", "레드", 100);
+        document.write(plan1.fly()); // 함수라 plan1.fly() 괄호 붙여줘야한다.
+        var plan2 = new Airplane("보라메", "레드", 100);
+        document.write(plan2.fly()); // 함수라 plan1.fly() 괄호 붙여줘야한다.
+
+        document.write("<br>----------------------------------------------------<br><br>");
+        document.write("- JSP 성적 구하기 문제 <br>");
+
+        var 홍길동 = new Grade("홍길동", 100, 70, 80);
+        function Grade(name, kor, eng, mat) {
+            this.name = name;
+            this.kor = kor;
+            this.eng = eng;
+            this.mat = mat;
+            this.getAvg = function() {
+                var avg = (kor+eng+mat) / 3.0;
+                return name + "의 평균은 " + avg + "점 입니다.<br>";
+            };
+            this.getGrede = function() {
+                var avg = (kor+eng+mat) / 3.0;
+                var result = "가";
+                if(avg >= 90) {
+                    result = "수";
+                } else if(avg >= 80) {
+                    result = "우";
+                } else if(avg >= 70) {
+                    result = "미";
+                } else if(avg >= 60) {
+                    result = "양";
+                } else {
+                    result = "갸";
+                }
+                return name + "의 성적은 " + result + "입니다.<br>";
+            }
+        }
+
+        document.write(홍길동.getAvg()); // 홍길동의 평균은 76.79 입니다.
+        document.write( 홍길동.getGrede());
+
+
+
+
+
+        document.write("<br>----------------------------------------------------<br><br>");
+        document.write("- 10_06 in, with 키워드<br>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

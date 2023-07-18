@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // html을 동적으로 만들기 위해 BOM(브라우저객체)
+
+        document.write("<br>----------------------------------------------------<br><br>");
+        document.write("- 13_02 window 객체<br>");
+        
+        /* Window객체 */
+			
+        var newWindow = window.open("http://www.google.com", "google", "width=500, height=600");
+        
+        //위치 조정
+        newWindow.moveTo(50, 50);
+        for(var i=0; i<1000; i++) {
+            newWindow.moveBy(1, 1);
+        }
+        
+        //사이즈 조정
+        newWindow.resizeTo(500, 600);
+        for(var i=0; i<200; i++) {
+            newWindow.resizeBy(-1, -1);
+        }
+
+        document.write("<br>----------------------------------------------------<br><br>");
+        document.write("- 13_03 onload 이벤트<br>");
+
+        // console.log(window);
+        /* Window.onload() */
+        window.onload = function() { // 호출된 웹 문서가 모두 완료된 후 자동으로 실행
+            // .onload : 페이지를 메모리로 모두 올리고 난 후 실행
+            // onload 안에는 콜백함수가 들어가줘야 한다.
+            console.log("FIRST!");
+        };
+
+        /* Screen객체 */
+			
+        function openWin(url, width, height) {
+        
+            console.log("screen.width : " + screen.width);
+            console.log("screen.height : " + screen.height);
+            
+            var left = screen.width/2 - width/2;
+            var top = screen.height/2 - height/2;
+            var opt = "width = " + width + ", height = " + height + ", left = " + left + ", top = " + top;
+            
+            open(url, "newWin", opt);
+        
+        }
+        openWin("https://yahoo.com", 800, 500);
+
+
+        document.write("<br>----------------------------------------------------<br><br>");
+        document.write("- 13_05 onload 이벤트<br>");
+
+        window.onload = function() {
+			
+            //location.href = "http://www.yahoo.com";
+        
+            location.assign("http://www.naver.com");
+            location.replace("http://www.naver.com");
+            /* assign : history 남기지 않는다 [뒤로 가기 X]
+            replace : */
+            
+            
+            /*
+            setTimeout(function() {
+                console.log("Location.reload!");
+                location.reload();
+            }, 3000);
+            */
+        
+        };
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

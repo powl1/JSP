@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 내장함수 */
+			
+        // alert("내장함수 : 기본적으로 제공하는 함수");
+        // console.log("내장함수 : 기본적으로 제공하는 함수");
+        
+        // 시간관련 함수
+        var timeFun = function() {
+            alert("3초 후 실행 한번 실행");
+        }
+        // var timeOut = setTimeout(timeFun, 3000);
+        /* 위에 함수와 동일
+        var tiemoutId = setTimeout(function(){
+            alert("3초 후 한번 실행됩니다.");
+        }, 3000);
+        clearTimeout(tiemoutId);
+        */
+        
+        var intervalId = setInterval(function(){
+            document.write("2초마다 실행" + "<br>");
+        }, 2000);
+
+        setTimeOut(function(){
+            document.write("2초마다 실행 실행끝" + "<br>");
+            clearInterval(intervalId);
+        },5000);
+        
+        var printTimeOutId = setTimeout(function(){
+            clearInterval(printIntervalId);
+            console.log("종료!");
+        }, 7000);
+
+        var printIntervalId = setInterval(function(){
+            console.log("*")
+        }, 2000);
+        
+        
+        // eval 함수 : 문자열에 있는 소드 코드 실행
+        // 악의적으로 해킹 코드를 삽입하여 이용 가능성이 있어 사용하지 않는다.
+        var varEval = "console.log('eval함수!')";
+        eval(varEval);
+        
+        // varEval = "document.write('<p>eval함수</p>');";
+        // eval(varEval);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
