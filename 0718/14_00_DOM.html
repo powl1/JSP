@@ -8,15 +8,15 @@
     <script>
         document.write("- 14_01 텍스트 노드 이용하기<br>");
         window.onload = function() {
-            var elementNode = document.createElement("p");
-            var textNode = document.createTextNode("javascript & node.js");
+            var tag = document.createElement("p");
+            var text = document.createTextNode("자바스크립트");
             
-            elementNode.appendChild(textNode);
-            document.body.appendChild(elementNode);
+            tag.appendChild(text); // P
+            document.body.appendChild(tag); // 자바스크립트
         };
 
         document.write("<br>----------------------------------------------------<br><br>");
-        document.write("- 14_02 <br>");
+        document.write("- 14_02 텍스트 노드외 노드 이용하기<br><br>");
 
         window.onload = function() {
             /*
@@ -29,26 +29,12 @@
             */
         
             var imgNode = document.createElement("img");
-            imgNode.setAttribute("src", "./img/logo.png");
+            imgNode.setAttribute("src", "/img/logo.png");
             imgNode.setAttribute("width", 170);
             imgNode.setAttribute("height", 67);
             imgNode.setAttribute("tempData", "logoImg");
             
             document.body.appendChild(imgNode);
-        
-        };
-
-        document.write("<br>----------------------------------------------------<br><br>");
-        document.write("- 14_03 <br>");
-
-        window.onload = function() {
-        
-            var str = "";
-            str += "<p> javascript & node.js </p>";
-            str += "<img src='./img/logo.png',";
-            str += "width='170', height='67', tempData='logoImg'>";
-            
-            document.body.innerHTML = str;
         
         };
     </script>
