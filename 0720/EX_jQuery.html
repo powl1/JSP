@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. 덧셈연산</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            $("#btn").click(function(){
+                let num1 = $("#num1").val();
+                let num2 = $("#num2").val();
+                let result = Number(num1) + Number(num2);
+                $("#result").val(result);
+            });
+
+
+            $("#quantity").change(function(){
+                let price = $("#price").val();
+                let count = $(this).val();
+                let total = Number(price) * Number(count);
+                $("#total").text(total);
+            });
+
+            $("#btnTotal").click(function(){
+                let total = 0;      
+                $("input:checkbox:checked").each(function (index,item) {
+                    total = total + Number(item.value);
+                });      
+                $("#totalPrice").text(total);
+            });  
+
+        });
+    </script>
+</head>
+<body>
+    <h2>1. +연산</h2>
+    <input type="number" id="num1" placeholder="숫자를 입력하세요"> +
+    <input type="number" id="num2" placeholder="숫자를 입력하세요"> =
+    <input type="text" id="result">
+    <button id="btn">연산</button>
+
+    <h2>2. 총합 구하기</h2>
+    가격 <input type="text" id="price" placeholder="숫자를 입력하세요"> X
+    수량 <select id="quantity">
+        <option value="수량">수량</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select> = 
+    총합 : <span id="total"></span> 
+    <h2>3. 총합 구하기2 (선택된 값만)</h2>
+    <div>
+        바나나(1000원) <input type="checkbox" name="fruit" class="fruit" value="1000"><br>
+        사과(500원) <input type="checkbox" name="fruit" class="fruit" value="500"><br>
+        배(1500원) <input type="checkbox" name="fruit" class="fruit" value="1500"><br>
+        <button id="btnTotal">총합구하기</button><br>
+        선택한 총가격:<span id="totalPrice"></span>
+    </div>
+</body>
+</html>

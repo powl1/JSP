@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            document.body.innerHTML = "<button class='bClick'> Button </button>";
+            $(".bClike").click(function(){
+                alert("메롱");
+            });
+
+            /* $(".logo").click(imgClickEventListener);
+            
+            function imgClickEventListener(){
+                console.log("logo image click!");
+                console.log("called imgClickEventListener");
+            }; */
+
+            //두번째인자-이벤트:onclick의 on을 객체로 만들어둠
+            $(document).on("click",".bClick2",function(){ //.on(이벤트명,선택자,콜백함수)순으로 들어가 
+            alert("메롱2");
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <!-- <button class="bClike"> Button </button> -->
+    <button class="bClike2"> Button2 </button>
+</body>
+</html>
