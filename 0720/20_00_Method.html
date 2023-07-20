@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.2.1.min.js"></script>
+    <style>
+        #wrap .contents1 .p { background: #ff0000; }
+        #wrap .contents2 .p { background: #ffff00; }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("p").each(function(index, item){ // each 함수 : 기본적으로 
+                console.log($(item).text());
+                //console.log($(this).text()); //item == this
+                if(index % 2 == 0) {
+                    $(item).css("background", "#dfdfdf");
+                    //$(this).css("background", "#dfdfdf");	//item == this
+                } else {
+                    $(item).css("background", "#cccccc");
+                    //$(this).css("background", "#cccccc");	//item == this
+                }
+            });
+            
+            //html() / text()
+            console.log("htmlMethod : " + $("#htmlMethod").html());
+            $("#htmlMethod").html("<strong>new</strong> " + $("#textMethod").html());
+            
+            console.log("textMethod : " + $("#textMethod").text());
+            $("#textMethod").text("new " + $("#textMethod").text());
+            
+            //addClsss() 클래스 속성 추가
+            //removeClsss() 클래스 속성 제거
+            $("#addClass").addClass("addCla");
+            $(".addCla").css("background", "#ff0000");
+            
+            $(".remCla").css("background", "#00ff00");
+            //$("#removeClass").removeClass("remCla");
+            //$(".remCla").removeClass("remCla");
+            $(".remCla").css("background", "#0000ff");
+            
+            
+            //css()	스타일 추가
+            //css()	스타일 검사
+            $("#cssMethod").css("width", "300px").css("height", "100px");
+            $("#cssMethod").css("background", "#ff0000");
+            
+            console.log("cssMethod css width : " + $("#cssMethod").css("width"));
+            console.log("cssMethod css height : " + $("#cssMethod").css("height"));
+            console.log("cssMethod css background : " + $("#cssMethod").css("background"));
+
+            console.log("=========================================================================");
+            console.log($("#textMethod").texxt());
+            $("#textMethod").text("아아아아");
+            console.log($("#textMethod").text());
+            // =========================================================================
+            // val() 함수 사용법
+            var num = $("#input").val();
+            // 자바는 value 지만, 
+            // 제이쿼리에서는 val 이다.
+            console.log(num);
+
+            $("#input").val('hello World');
+
+            // =========================================================================
+            // remove() : 문서 객체 제거
+            // empty() : 문서 객체 내부 제거
+            $("#removeMthod").remove();
+            $("#emptyMthod").empty();
+
+            // =========================================================================
+            //attr()  속성 추가
+            //attr()  속성 검사 (2개이상인 경우 첫번째 객체 이용)
+            //removeAttr(속성)  속성 제거
+            $("#attrMethod img").attr("src", "/img/logo.png");
+            console.log("#attrMethod img src : " + $("#attrMethod img").attr("src"));
+            
+            $("#attrMethod img").removeAttr("src");
+            console.log("#attrMethod img src : " + $("#attrMethod img").attr("src"));
+
+
+
+        });
+    </script>
+</head>
+<body>
+    <p> Hello javascript! </p>
+    <p> Hello jQuery! </p>
+    <p> Hello node.js! </p>
+    
+    <div id="htmlMethod"> html() 메서드 </div>
+    <div id="textMethod"> text() 메서드 </div>
+    
+    <div id="addClass"> addClass() 메서드 </div>
+    <div id="removeClass" class="remCla"> removeClass() 메서드 </div>
+    
+    <div id="attrMethod"><img><br><img></div>
+    
+    <div id="cssMethod"> CSS METHOD </div>
+    
+    <div id="removeMthod"> Remove Object! </div>
+    <div id="emptyMthod"> Empty Object! </div>
+</body>
+</html>

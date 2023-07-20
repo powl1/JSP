@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("*").css({"font-size":"1.1em"});
+            $("li").css({"color":"#0000ff"});
+            $("#item").css({"background":"#ffff00","width":"300px"});
+            $(".seoul").css({"background":"#ff0000"});
+            $("#wrap p").css({"border":"2px solid #ccc"}); // wrap 밑에 모든 p : 후손
+            $("#wrap > p").css({"border":"2px solid #ccc"}); // wrap 밑에 자식 p : 자손
+
+        })
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <p>jQuery selector</p>
+        <div id="centent">
+           <h1>centent</h1>
+           <p>ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅌ</p>
+           <p>ABCDEFGHIJKLMN</p>
+        </div>
+        <div id="item">
+           <ul>
+              <li class="seoul">서울</li>
+              <li class="gyeonggi_do">경기도</li>
+              <li>충청도</li>
+              <li>전라도</li>
+              <li>경상도</li>
+              <li>강원도</li>
+              <li>제주도</li>
+           </ul>
+        </div>
+     </div>
+</body>
+</html>
