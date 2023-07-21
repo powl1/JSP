@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON 기초</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // 자바스크립트 객체를 JSON형태로 바꾸기
+
+            var person = {
+                name : "홍길동",
+                age : 30
+            }
+
+            // var json = JSON.stringif(person);
+            // document.write(json + "<br>");
+
+            // $.ajax({
+            //     type : `http method type`,
+            //     url : `url`,
+            //     data : `서버에 전송할 데이터`,
+            //     contentType : "전송할 데이터 타입",
+            //     //기본 값 : "application / x-www-form-urlencoded; charset = UTF-8"  
+            //     dataType : '서버로 부터 수신할 데이터 타입',
+            //     //아무것도 지정하지 않으면 jQuery는 응답의 MIME 유형을 기반으로 해석을 시도
+            //     error : `에러 발생시 수행할 함수`,
+            //     success : `성공시 수행할 함수`
+            // });
+
+            $.ajax({
+                type : "GET",
+                url : "https://sample.bmaster.kro.kr/contacts?pageno=3&pagesize=10",
+                error : function(error){ // error 와 success 는 콜백함수
+                    console.log(Erro);
+                },
+                success : function(result){
+                    console.log("통신 성공");
+                    console.log(result);
+
+                    document.write(result.pageno);
+                    document.write(result.contacts[0].name);
+                    
+                }
+            });
+
+            console.log("비동기 체크 문구")
+
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+
+<!-- JSON -->
+<!-- 
+데이터 = json vs xml
+ajax = 비동식 = 
+-->
