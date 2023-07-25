@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        // let kor = Number(prompt("국어 점수를 입력하시오"));
+        // let eng = Number(prompt("영어 점수를 입력하시오"));
+        // let mat = Number(prompt("수학 점수를 입력하시오"));
+
+        let sum = kor + eng + mat;
+        let avg = sum / 3;
+
+        document.write(`평균 : ${avg} 점<br>`);
+        document.write(`총점 : ${sum} 점<br>`);
+        // =======================================================
+
+        let lotto = []; // 로또 배열선언
+
+        while(1) {
+            if(lotto.length >= 6) break; 
+            let num = parseInt(Math.random() * 45 + 1);
+            //lotto.indexOf(num) -> num lotto안에 있으면 index가 나옴
+            //                   -> 없으면 -1
+             if(lotto.indexOf(num) < 0)
+                lotto.push(num);
+        }
+        console.log(lotto);
+
+        // =====================================================
+
+        // functino Circle 생성
+        function Circle(rad) {
+            this.rad= rad;
+            this.getArea = function() {
+                return rad*rad*Math.PI;
+            } 
+        }
+
+        var circle = new Circle(10);
+        document.write(circle.getArea()); //반지름 10 넓이는 314.1516 입니다.
+    </script>
+</head>
+<body>
+    <!-- 자바스크랍트 : 국영수 입력 받아 짜시오 평균과 총점을 출력하시오 -->
+</body>
+</html>
